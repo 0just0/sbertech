@@ -6,7 +6,8 @@ from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
 app = Flask(__name__)
 
 stop_words = set(stopwords.words("russian"))
-
+vectorizer = joblib.load("models/tfidf_matrix.pkl")
+predictor = joblib.load("models/model_v1.pkl")
 
 @app.route('/')
 def index():
