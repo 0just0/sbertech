@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello Bulma!</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
+    <style>
+        .form-block {
+            padding: 2em;
+            background: white;
+            border-radius: 15px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+    </style>
+  </head>
+  <body>
+    <section class="hero is-primary is-fullheight is-bold">
+            <div class="hero-body">
+                    <div class="container has-text-centered">
+                      <h1 class="title">
+                        Введите Ваш комментарий
+                      </h1>
+                    <div class="form-block">
+                            <form action="{{ url_for('predict') }}" method="POST">
+                                    <div class="field">
+                                            <label class="label">Заголовок</label>
+                                            <div class="control">
+                                              <input name="Title" class="input" type="text" placeholder="Комментарий">
+                                            </div>
+                                          </div>
+                                          
+                                          <div class="field">
+                                            <label class="label">Комментарий</label>
+                                            <div class="control">
+                                                    <textarea name="Review" class="textarea" placeholder="Textarea"></textarea>
+                                            </div>
+                                          </div>
+                                          <input class="button is-primary" type="submit" value="Оценить">
+                              </form>
+                    </div>
+                    </div>
+            </div>
+    </section>
+  </body>
+</html>
